@@ -111,7 +111,6 @@ public class Pictures extends JFrame
         sortKeys.add(new RowSorter.SortKey(4, SortOrder.ASCENDING));
         sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
         for (int i=0; i<table.getRowCount(); i++) {
-            System.out.println(icons.get(i).getIconHeight());
             table.setValueAt(icons.get(i), i, 1);
         }
         sorter.setSortKeys(sortKeys);
@@ -128,7 +127,6 @@ public class Pictures extends JFrame
                     reference = id;
                     pics.get(id).put("Is reference", true);
                 }
-                System.out.println("ref: " + reference);
                 updateTable();
             }
         });
@@ -195,7 +193,6 @@ public class Pictures extends JFrame
                         for (Tag tag : directory.getTags()) {
                             pics.get(pics.size()-1).put(tag.getTagName(),tag.getDescription());
                             tableColumns.add(tag.getTagName());
-                            System.out.println(tag.getTagName());
                         }
                     }
                 }
