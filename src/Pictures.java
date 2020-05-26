@@ -55,9 +55,9 @@ public class Pictures extends JFrame
                 diff += pixelDiff(img1.getRGB(x, y), img2.getRGB(x, y));
             }
         }
-        long maxDiff = 3L * 255 * width * height;
+        long maxDiff = 3L * 255 * width * height / 100;
 
-        return 100.0 - 100.0 *   diff / maxDiff;
+        return 1.000 -   diff / maxDiff / 100.000;
     }
 
     private static int pixelDiff(int rgb1, int rgb2) {
