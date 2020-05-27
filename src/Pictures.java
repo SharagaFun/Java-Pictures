@@ -1,14 +1,11 @@
 import com.drew.imaging.*;
 import com.drew.metadata.*;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -90,7 +87,7 @@ public class Pictures extends JFrame
 
     }
     public Pictures() {
-        super("Images");
+        super("Pictures");
         pics = new ArrayList<>();
         tableColumns = new LinkedHashSet<>();
         tableColumns.add("Is reference");
@@ -118,6 +115,7 @@ public class Pictures extends JFrame
         setVisible(true);
 
     }
+
     private void addFileChooserListeners()
     {
         btnFileOpen.addActionListener(e -> {
