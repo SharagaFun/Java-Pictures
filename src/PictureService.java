@@ -22,21 +22,13 @@ public class PictureService {
         BufferedImage img1 = resize(ImageIO.read(new File(path1)), 300, 300);
         BufferedImage img2 = resize(ImageIO.read(new File(path2)), 300, 300);
 
-        int width = img1.getWidth();
-        int height = img1.getHeight();
-        int width2 = img2.getWidth();
-        int height2 = img2.getHeight();
-        if (width != width2 || height != height2) {
-            throw new IllegalArgumentException(String.format("Images must have the same dimensions: (%d,%d) vs. (%d,%d)", width, height, width2, height2));
-        }
-
         long diff = 0;
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+        for (int y = 0; y < 300; y++) {
+            for (int x = 0; x < 300; x++) {
                 diff += pixelDiff(img1.getRGB(x, y), img2.getRGB(x, y));
             }
         }
-        long maxDiff = 3L * 255 * width * height / 100;
+        long maxDiff = 3L * 255 * 300 * 3;
 
         return 1.000 -   diff / maxDiff / 100.000;
     }
